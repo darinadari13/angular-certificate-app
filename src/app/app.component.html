@@ -2,13 +2,11 @@
   <div class="app">
     <div class="left-container">
       <app-certificates-list></app-certificates-list>
-      <button class="add-button">Додати</button>
-      <!-- <list></list>
-      <add-button></add-button> -->
+      <button class="add-button" (click)="toggleDropezoneVisible()">{{ isDropzoneVisible ? 'Скасувати' : 'Додати'}}</button>
     </div>
-    <div>
-     <app-certificate-info></app-certificate-info>
-      <!-- <dnd-upload></dnd-upload> -->
+    <div class="right-container">
+      <app-certificate-info *ngIf="!isDropzoneVisible"></app-certificate-info>
+      <upload-input *ngIf="isDropzoneVisible"></upload-input>
     </div>
   </div>
 </div>

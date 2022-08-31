@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-certificate-app';
+  isDropzoneVisible = false;
+
+  toggleDropezoneVisible() {
+    this.isDropzoneVisible = !this.isDropzoneVisible
+  }
 }

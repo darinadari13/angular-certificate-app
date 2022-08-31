@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CertificateInfoComponent } from './components/certificate-info/certificate-info.component';
 import { CertificateListComponent } from './components/certificates-list/certificates-list.component';
 import { UploadInputComponent } from './components/upload-input/upload-input.component';
+import { DropzoneDirective } from './dropzone.directive';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { UploadInputComponent } from './components/upload-input/upload-input.com
     AppComponent,
     CertificateListComponent,
     CertificateInfoComponent,
-    UploadInputComponent
+    UploadInputComponent,
+    DropzoneDirective
   ],
   imports: [
     BrowserModule,
