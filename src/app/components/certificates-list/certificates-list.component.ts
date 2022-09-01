@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./certificates-list.component.scss']
 })
 export class CertificateListComponent {
+  certs
 
-
+  constructor() {
+    this.certs = JSON.parse(localStorage.getItem('certs'))
+  }
 }
