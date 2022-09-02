@@ -42,13 +42,8 @@ export class UploadInputComponent {
         const asn1 = ASN1.decode(decodedFile);
 
         const asn1Issuer = asn1.sub[0].sub[3];
-        // const asn1Person = asn1.sub[0].sub[5];
-        // const asn1Dates = asn1.sub[0].sub[4];
 
         const personName = asn1Issuer.sub[2].sub[0].sub[1].content()
-        // const issuerName = asn1Person.sub[2].sub[0].sub[1].content()
-        // const dateFrom = asn1Dates.sub[0].content()
-        // const dateTo = asn1Dates.sub[1].content()
 
         const currentSavedCerts = JSON.parse(localStorage.getItem('certs')) || []
         localStorage.setItem('certs', JSON.stringify([...currentSavedCerts, { cert: decodedFile, name: personName }]))

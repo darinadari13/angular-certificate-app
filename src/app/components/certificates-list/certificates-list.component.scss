@@ -20,6 +20,16 @@ li {
   }
 }
 
+button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer; 
+  }
+}
+
 .active {
   background-color: lightgray;
   color: #4b4b4b;

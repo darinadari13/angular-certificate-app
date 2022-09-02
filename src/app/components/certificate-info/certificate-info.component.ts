@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-certificate-info',
@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./certificate-info.component.scss']
 })
 export class CertificateInfoComponent {
-
-
+  @Input() certInfo = null;
 }

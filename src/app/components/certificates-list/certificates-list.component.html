@@ -1,3 +1,5 @@
 <ul class="certificates-list">
-  <li *ngFor="let item of certs" [innerHTML]="item.name"></li>
+  <li *ngFor="let item of certs" [class.active]="item.selected">
+      <button [innerHTML]="item.name" (click)="selectCert(item)"></button>
+  </li>
 </ul>

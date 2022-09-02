@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-certificates-list',
@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class CertificateListComponent {
   @Input() certs = [];
+  @Output() certSelected = new EventEmitter<any>();
+
+  selectCert(cert) {
+    this.certSelected.emit(cert);
+  }
 }

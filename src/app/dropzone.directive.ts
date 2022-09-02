@@ -1,4 +1,4 @@
-import { Directive, EventEmitter, HostBinding, HostListener, Output } from '@angular/core';
+import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({
   selector: '[DropZone]'
@@ -26,10 +26,3 @@ export class DropzoneDirective {
     }
   }
 }
-
-
-// TODO:
-// 1. Select cert -> parce set -> display info in info cert component. Read about components communication
-// in Angular
-// 2. Rerender left list after saving new cert to localstorage
-// 3. Upload to stackblitz

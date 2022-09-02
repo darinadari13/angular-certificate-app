@@ -1,6 +1,6 @@
-<div class="certificate-info">
-  <span>Common Name: Іванов Іван Іванович</span>
-  <span>Issuer CN: АЦСК MASTERKEY</span>
-  <span>Valid From: 2016-12-18</span>
-  <span>Valid Till: 2017-12-18</span>
+<div class="certificate-info" *ngIf="certInfo">
+  <span *ngIf="certInfo.personName">Common Name: {{certInfo.personName}}</span>
+  <span *ngIf="certInfo.issuerName">Issuer CN: {{certInfo.issuerName}}</span>
+  <span *ngIf="certInfo.dateFrom">Valid From: {{certInfo.dateFrom}}</span>
+  <span *ngIf="certInfo.dateTo">Valid Till: {{certInfo.dateTo}}</span>
 </div>
