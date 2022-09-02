@@ -36,6 +36,7 @@ function readFile(f) {
 })
 export class UploadInputComponent {
   @Input() onFileUploadCompleted;
+  @Input() showList;
 
   droppedFiles(file: File): void {
     readFile(file).then((decodedFile) => {
@@ -46,9 +47,14 @@ export class UploadInputComponent {
         const personName = asn1Issuer.sub[2].sub[0].sub[1].content()
 
         const currentSavedCerts = JSON.parse(localStorage.getItem('certs')) || []
-        localStorage.setItem('certs', JSON.stringify([...currentSavedCerts, { cert: decodedFile, name: personName }]))
+        const newCert = { cert: decodedFile, name: personName, id: currentSavedCerts.length }
+        localStorage.setItem(
+          'certs',
+          JSON.stringify([...currentSavedCerts, newCert])
+        )
 
         this.onFileUploadCompleted()
+        this.showList()
       })
   }
 }

@@ -46,7 +46,7 @@ export class AppComponent {
     }
 
     this.certs.forEach(item => {
-      if (data.name === item.name) {
+      if (data.id === item.id) {
         item.selected = true
       } else {
         item.selected = false
