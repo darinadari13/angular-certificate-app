@@ -9,6 +9,10 @@ export class CertificateListComponent {
   certs
 
   constructor() {
+    this.getListFromLocalStorage()
+  }
+
+  getListFromLocalStorage() {
     this.certs = JSON.parse(localStorage.getItem('certs'))
   }
 }
