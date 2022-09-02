@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import ASN1 from '@lapo/asn1js';
 import Hex from '@lapo/asn1js/hex';
 import Base64 from '@lapo/asn1js/base64';
@@ -35,6 +35,8 @@ function readFile(f) {
   styleUrls: ['./upload-input.component.scss']
 })
 export class UploadInputComponent {
+  @Input() onFileUploadCompleted;
+
   droppedFiles(file: File): void {
     readFile(file).then((decodedFile) => {
         const asn1 = ASN1.decode(decodedFile);
@@ -50,6 +52,8 @@ export class UploadInputComponent {
 
         const currentSavedCerts = JSON.parse(localStorage.getItem('certs')) || []
         localStorage.setItem('certs', JSON.stringify([...currentSavedCerts, { cert: decodedFile, name: personName }]))
-    })
+
+        this.onFileUploadCompleted()
+      })
   }
 }

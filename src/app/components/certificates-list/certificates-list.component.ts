@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-certificates-list',
@@ -6,13 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./certificates-list.component.scss']
 })
 export class CertificateListComponent {
-  certs
-
-  constructor() {
-    this.getListFromLocalStorage()
-  }
-
-  getListFromLocalStorage() {
-    this.certs = JSON.parse(localStorage.getItem('certs'))
-  }
+  @Input() certs = [];
 }

@@ -1,12 +1,12 @@
 <div class="app-wrapper">
   <div class="app">
     <div class="left-container">
-      <app-certificates-list></app-certificates-list>
+      <app-certificates-list [certs]="certs"></app-certificates-list>
       <button class="add-button" (click)="toggleDropezoneVisible()">{{ isDropzoneVisible ? 'Скасувати' : 'Додати'}}</button>
     </div>
     <div class="right-container">
       <app-certificate-info *ngIf="!isDropzoneVisible"></app-certificate-info>
-      <upload-input *ngIf="isDropzoneVisible"></upload-input>
+      <upload-input *ngIf="isDropzoneVisible" [onFileUploadCompleted]="getListFromLocalStorage()"></upload-input>
     </div>
   </div>
 </div>

@@ -8,6 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-certificate-app';
   isDropzoneVisible = false;
+  certs: any[]
+
+  constructor() {
+    this.getListFromLocalStorage()
+  }
+
+  getListFromLocalStorage() {
+    this.certs = JSON.parse(localStorage.getItem('certs'))
+  }
 
   toggleDropezoneVisible() {
     this.isDropzoneVisible = !this.isDropzoneVisible
